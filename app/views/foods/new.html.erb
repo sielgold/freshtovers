@@ -1,0 +1,8 @@
+<h1>What do you have left over?</h1>
+
+<%=  simple_form_for [@food] do |f| %>
+<%= f.input :name  %>
+<%= f.submit 'Share Your Leftovers' %>
+<% end %>
+
+<%= link_to 'Back', foods_path %>
