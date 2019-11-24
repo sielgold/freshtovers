@@ -14,8 +14,12 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
-    @food.save
-    redirect_to foods_path
+    @food.user = current_user
+    if @food.save
+      redirect_to @food
+    else
+      render :new
+    end
   end
 
   private
