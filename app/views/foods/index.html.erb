@@ -33,7 +33,7 @@
         </td>
         <td>
           <% if policy(food).destroy? %>
-          <%= link_to 'Destroy', method: :delete, data: {confirm: 'Are you sure?'} %>
+          <%= link_to 'Delete', food_path(food), method: :delete, data: {confirm: 'Are you sure?'} %>
           <% end %>
         </td>
       </tr>
