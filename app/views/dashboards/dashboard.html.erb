@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dashboard</h1>
+<br>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+  <div class="card-body">
+    <% @foods.each do |food| %>
+      <h5 class="card-title"><%= food.name %></h5>
+      <p class="card-text"><%= food.description %></p>
+      <p class="card-text"><%= food.freshness %></p>
+      <p class="card-text"><%= food.price %></p>
+      <p> <%= link_to 'Show', food %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+  <div class="card-body">
+    <% @orders.each do |order| %>
+      <h5 class="card-title"><%= order.name %></h5>
+      <p class="card-text"><%= order.description %></p>
+      <p class="card-text"><%= order.freshness %></p>
+      <p class="card-text"><%= order.price %></p>
+      <p> <%= link_to 'Show', order %></p>
+    <% end %>
+  </div>
+</div>
+
+
+<%= link_to 'Add your leftovers!', new_food_path %>

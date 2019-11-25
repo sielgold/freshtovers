@@ -1,32 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Leftovers!</h1>
+<div class="container mx-auto">
 
-<table class=" table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Freshness</th>
-      <th>Location</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @foods.each do |food| %>
-      <tr>
-        <td><%= food.name %></td>
-        <td><%= food.freshness %></td>
-        <td><%= food.location %></td>
-        <td><%= food.description %></td>
-        <td><%= food.price %></td>
-        <td><%= link_to 'Show', food %></td>
-      </tr>
+  <h1>freshTovers</h1>
+  <%= link_to "Add your leftovers!", new_food_path, class: "btn btn-primary"%>
+  <div class="row mx-auto">
+   <% @foods.each do |food| %>
+    <div class="card m-2" style="width: 18rem;">
+      <img src="https://cdn.pixabay.com/photo/2016/02/29/11/45/muffin-1228445_1280.jpg" class="card-img-top" alt="food image">
+      <div class="card-body p-2">
+        <h5 class="card-title"><%= food.name %></h5>
+        <p class="card-text">Freshness:<%= food.freshness %></p>
+        <p class="card-text">Price:<%= food.price %></p>
+        <p class="card-text"><%= food.description %></p>
+        <%= link_to "Eat it", food_path(food), class: "btn btn-success"%>
+        <% if policy(food).edit? %>
+        <%= link_to "Edit it", edit_food_path(food), class: "btn btn-warning"%>
+        <%= link_to "delete", food_path(food), method: :delete , class: "btn btn-danger"%>
+        <% end %>
+      </div>
+    </div>
     <% end %>
-  </tbody>
-
-<br>
-
-<%= link_to 'Add your leftovers!', new_food_path %>
+  </div>
+</div>
