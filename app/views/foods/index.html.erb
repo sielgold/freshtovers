@@ -11,6 +11,8 @@
       <th>Description</th>
       <th>Price</th>
       <th>Show</th>
+      <th>hello</th>
+      <th>Show</th>
     </tr>
   </thead>
 
@@ -23,6 +25,17 @@
         <td><%= food.description %></td>
         <td><%= food.price %></td>
         <td><%= link_to 'Show', food %></td>
+        <td>
+          <% if policy(food).edit? %>
+
+          <%= link_to 'Edit', edit_food_path(food) %>
+          <% end %>
+        </td>
+        <td>
+          <% if policy(food).destroy? %>
+          <%= link_to 'Destroy', method: :delete, data: {confirm: 'Are you sure?'} %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
