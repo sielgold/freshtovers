@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dashboard</h1>
+<br>
+
+<table class=" table table-hover">
+<h2>Your Leftovers!</h2>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Freshness</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.freshness %></td>
+        <td><%= food.location %></td>
+        <td><%= food.description %></td>
+        <td><%= food.price %></td>
+        <td><%= link_to 'Show', food %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+<br>
+
+<table class=" table table-hover">
+<h2>Your Orders!</h2>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Freshness</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.freshness %></td>
+        <td><%= order.location %></td>
+        <td><%= order.description %></td>
+        <td><%= order.price %></td>
+        <td><%= link_to 'Show', order %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+<br>
+
+<%= link_to 'Add your leftovers!', new_food_path %>
