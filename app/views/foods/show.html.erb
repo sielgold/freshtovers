@@ -1,31 +1,5 @@
+<h1><%= @food.name %></h1>
 
-<!-- <div class="card" style="width: 18rem;">
-  <img src="https://images.unsplash.com/photo-1531263539449-56fdf29dfc4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food image">
-  <div class="card-body p-2">
-    <h5 class="card-title"><%= @food.name %></h5>
-    <p class="card-text">Freshness:<%= @food.freshness %></p>
-    <p class="card-text">Price:<%= @food.price %></p>
-    <p class="card-text"><%= @food.description %></p>
-    <a href="#" class="btn btn-success">Eat it!</a>
-  </div>
-</div>
- -->
-<body>
-<div class="show-food card mx-auto" style="max-width: 1000px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-<img src="https://images.unsplash.com/photo-1531263539449-56fdf29dfc4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top img-fluid" alt="food image">
-</div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h2 class="card-title"><%= @food.name %></h2>
-        <p class="card-text"><strong>Freshness: </strong><%= @food.freshness %></p>
-        <p class="card-text"><strong>Price: </strong><%= @food.price %></p>
-        <p class="card-text"><%= @food.description %></p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a href="#" class="btn btn-success">Bite it!</a>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
+<h3><%= @food.freshness %></h3>
+<h3><%= @food.price %></h3>
+<h3><%= @food.description %></h3>
