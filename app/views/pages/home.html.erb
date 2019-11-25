@@ -1,32 +1,32 @@
 <p id="notice"><%= notice %></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1531263539449-56fdf29dfc4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="search-form-wrapper col-4 col-md-4 offset-md-1 col-xl-4 offset-xl-1">
+    <h1><strong>Biteit </strong>connects delicious <strong>LeftOvers</strong> and <strong>people</strong>!</h1>
+    <p>food that otherwise would go to waste, turns to a meal</p>
+    <%= render 'shared/search-form' %>
+  </div>
+</div>
 
-<h1>Leftovers!</h1>
 
-<table class=" table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Freshness</th>
-      <th>Location</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Show</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @foods.each do |food| %>
-      <tr>
-        <td><%= food.name %></td>
-        <td><%= food.freshness %></td>
-        <td><%= food.location %></td>
-        <td><%= food.description %></td>
-        <td><%= food.price %></td>
-        <td><%= link_to 'Show', food %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<div class="d-flex card-wrap" style= "justify-content: space-evenly;" >
+  <% @foods.sample(4).each do |food| %>
+  <div class="card-trip">
+    <img src="https://source.unsplash.com/1600x900/?<%=food.name %>"/>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= food.name  %></h2>
+        <p><%= food.description %></p>
+      </div>
+      <h2 class="card-trip-pricing"><%= food.price %></h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
 
-<br>
+  <% end %>
 
-<%= link_to 'Add your leftovers!', new_food_path %>
+
+
+
+
+<!--  -->

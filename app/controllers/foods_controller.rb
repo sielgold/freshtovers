@@ -2,6 +2,7 @@ class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update]
 
   def index
+    raise
     @foods = Food.all
   end
 
@@ -31,5 +32,6 @@ class FoodsController < ApplicationController
   def food_params
    params.require(:food).permit(:name, :freshness, :location, :description, :price)
   end
+
 
 end
