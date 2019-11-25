@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: [:show, :edit, :update]
+  before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   def index
     @foods = policy_scope(Food).order(created_at: :asc)
@@ -38,7 +38,7 @@ class FoodsController < ApplicationController
 
   def destroy
     @food.destroy
-    redirect_to food_url, notice: 'food has been successfully destroyed'
+    redirect_to foods_path, notice: 'food has been successfully deleted'
   end
 
   private
