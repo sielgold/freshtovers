@@ -12,8 +12,7 @@
 
   }
 }
-.card {
-  overflow: hidden;
+.show-card {
   margin: 50px auto;
   height: 300px;
   width: 700px;
@@ -23,31 +22,31 @@
 
 }
 
-.card img {
+.show-card img {
   height: 100%;
   width: auto;
   object-fit: cover;
 }
-.card-head {
+.show-card-head {
   display: inline;
 }
 
 
-.card h2 {
+.show-card h2 {
   font-weight: bold;
 }
 
-.card p {
+.show-card p {
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 8px;
   margin-top: 8px;
 }
 
-.card .card-content {
+.show-card .show-card-content {
   padding: 16px;
 }
-.card .card-body {
+.show-card .show-card-body {
   margin-top: 10px;
   padding-left: 0;
 }
