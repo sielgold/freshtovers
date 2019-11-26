@@ -4,6 +4,7 @@
   <%= link_to "Add your leftovers!", new_food_path, class: "btn btn-primary"%>
   <div class="row justify-content-md-center">
    <% @foods.each do |food| %>
+   <% if food.order.empty? %>
    <div class="col-md-4 col-sm-12">
       <div class="card">
         <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
@@ -16,9 +17,11 @@
               <%= link_to "Edit it", edit_food_path(food), class: "btn btn-warning"%>
               <% end %>
               <%= link_to "delete", food_path(food), method: :delete , class: "btn btn-danger"%>
+
         </div>
       </div>
       </div>
+<% end %>
 <% end %>
   </div>
 </div>
