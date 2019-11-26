@@ -7,7 +7,11 @@
    <% if food.order.empty? %>
    <div class="col-md-4 col-sm-12">
       <div class="card mb-5">
+        <% if food.photo.url.nil? %>
         <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
+  <% else %>
+  <%= cl_image_tag food.photo %>
+  <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= food.name %></h5>
             <p class="card-text">Freshness:<%= food.freshness %></p>
