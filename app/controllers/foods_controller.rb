@@ -7,6 +7,11 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find(params[:id])
+    @markers = [
+      {
+        lat: @food.latitude,
+        lng: @food.longitude
+      }]
   end
 
   def edit
