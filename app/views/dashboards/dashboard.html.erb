@@ -17,7 +17,6 @@
       <p class="card-text"><%= food.description %></p>
       <p class="card-text"><%= food.freshness %></p>
       <p class="card-text"><%= food.price %></p>
-      <%= cl_image_tag food.photo, class: "card-text" %>
       <p> <%= link_to 'Show', food %></p>
       </div>
   </div>
@@ -38,7 +37,6 @@
       <p class="card-text"><%= order.description %></p>
       <p class="card-text"><%= order.freshness %></p>
       <p class="card-text"><%= order.price %></p>
-      <%= cl_image_tag order.food.photo, class: "card-text" %>
       <p> <%= link_to 'Show', order %></p>
     </div>
   </div>
