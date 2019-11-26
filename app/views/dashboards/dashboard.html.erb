@@ -21,10 +21,10 @@
   <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
   <div class="card-body">
     <% @orders.each do |order| %>
-      <h5 class="card-title"><%= order.name %></h5>
-      <p class="card-text"><%= order.description %></p>
-      <p class="card-text"><%= order.freshness %></p>
-      <p class="card-text"><%= order.price %></p>
+      <h5 class="card-title"><%= order.food.name %></h5>
+      <p class="card-text"><%= order.food.description %></p>
+      <p class="card-text"><%= order.food.freshness %></p>
+      <p class="card-text"><%= order.food.price %></p>
       <%= cl_image_tag order.food.photo, class: "card-text" %>
       <p> <%= link_to 'Show', order %></p>
     <% end %>
