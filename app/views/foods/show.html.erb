@@ -16,6 +16,6 @@
   <p><strong>$</strong><%= @food.price %></p>
   <p><%= @food.description %></p>
   </div>
-  <a href="#" class="btn btn-success">Bite it!</a>
+  <%= link_to "Bite it!", food_orders_path(@food), method: :post, class: "btn btn-success"%>
     </div>
 </div>
