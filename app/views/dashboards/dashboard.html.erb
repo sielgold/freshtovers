@@ -1,33 +1,50 @@
-<p id="notice"><%= notice %></p>
-
+<div class="dashboard-head row justify-content-between m-5" >
 <h1>Dashboard</h1>
-<br>
+<%= link_to "Couldn't finish something?", new_food_path %>
+</div>
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
-  <div class="card-body">
+<div class="container">
+<h2>What you've shared</h2>
+<div class="row justify-content-md-center mb-5">
     <% @foods.each do |food| %>
+    <div class="col-md-4 col-sm-12">
+        <div class="dashboard-card">
+      <div class="card">
+          <img class="card-img-top card-img" src="https://source.unsplash.com/random" alt="food-image">
+          <div class="dashboard-card-content">
       <h5 class="card-title"><%= food.name %></h5>
       <p class="card-text"><%= food.description %></p>
       <p class="card-text"><%= food.freshness %></p>
       <p class="card-text"><%= food.price %></p>
       <p> <%= link_to 'Show', food %></p>
-    <% end %>
+      </div>
+  </div>
   </div>
 </div>
+    <% end %>
+</div>
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
-  <div class="card-body">
+<h2>What you've warmed up</h2>
+<div class="row justify-content-md-center">
     <% @orders.each do |order| %>
-      <h5 class="card-title"><%= order.name %></h5>
-      <p class="card-text"><%= order.description %></p>
-      <p class="card-text"><%= order.freshness %></p>
-      <p class="card-text"><%= order.price %></p>
+    <div class="col-md-4 col-sm-12">
+    <div class="dashboard-card">
+  <div class="card">
+  <img class="card-img-top card-img" src="https://source.unsplash.com/random" alt="food-image">
+  <div class="dashboard-card-content">
+      <h5 class="card-title"><%= order.food.name %></h5>
+      <p class="card-text"><%= order.food.description %></p>
+      <p class="card-text"><%= order.food.freshness %></p>
+      <p class="card-text"><%= order.food.price %></p>
+
+      <%= cl_image_tag order.food.photo, class: "card-text" %>
+
       <p> <%= link_to 'Show', order %></p>
-    <% end %>
+    </div>
   </div>
+</div>
+</div>
+    <% end %>
 </div>
 
 
-<%= link_to 'Add your leftovers!', new_food_path %>

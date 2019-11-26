@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_124259) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "photo"
     t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_124259) do
     t.datetime "updated_at", null: false
     t.string "full_name"
     t.string "address"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
