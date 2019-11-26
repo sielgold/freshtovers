@@ -33,10 +33,10 @@
   <div class="card">
   <img class="card-img-top card-img" src="https://source.unsplash.com/random" alt="food-image">
   <div class="dashboard-card-content">
-      <h5 class="card-title"><%= order.name %></h5>
-      <p class="card-text"><%= order.description %></p>
-      <p class="card-text"><%= order.freshness %></p>
-      <p class="card-text"><%= order.price %></p>
+      <h5 class="card-title"><%= order.food.name %></h5>
+      <p class="card-text"><%= order.food.description %></p>
+      <p class="card-text"><%= order.food.freshness %></p>
+      <p class="card-text"><%= order.food.price %></p>
       <p> <%= link_to 'Show', order %></p>
     </div>
   </div>
