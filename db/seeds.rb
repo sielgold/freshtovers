@@ -12,14 +12,14 @@ User.create!(email:"Clara@Dixieland.com", full_name:"Clara", address: "Deutschla
 User.create!(email:"Merv@kby.com", full_name:"Mervin", address: "Oakland", password: "123456")
 
 Food.create!(name: "Day old Sushi", freshness: 2, location: "TLV",
-  description: "day old sushi", price: "$2", user_id: 1)
+  description: "day old sushi", price: "2", user_id: 1)
 Food.create!(name: "Cold pizza", freshness: 4, location: "Beer Sheva",
-  description: "half pizza from last night. I'm starting my diet now", price: "$1", user_id: 2)
+  description: "half pizza from last night. I'm starting my diet now", price: "1", user_id: 2)
 Food.create!(name: "Cholent", freshness: 4, location: "Netanya",
-  description: "Leftover from shabbat", price: "free", user_id: 9)
+  description: "Leftover from shabbat", price: "0", user_id: 9)
 Food.create!(name: "half bottle of beer", freshness: 1, location: "TLV",
-  description: "I couldn't finish it", price: "$.5", user_id: 4)
+  description: "I couldn't finish it", price: ".5", user_id: 4)
 Food.create!(name: "borekas", freshness: 5, location: "Eilat",
-  description: "come and get it", price: "$10", user_id: 2)
+  description: "come and get it", price: "10", user_id: 2)
 
 Order.create!(food_id: 2, user_id: 4)

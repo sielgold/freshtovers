@@ -12,7 +12,7 @@
         <h5 class="card-title"><%= food.name %></h5>
         <p class="card-text">Freshness:<%= food.freshness %></p>
         <p class="card-text">Price:<%= food.price %></p>
-        <p class="card-text"><%= food.description %></p>
+        <p class="card-text"><%= food.description[0..60] %>...</p>
         <%= link_to "Eat it", food_path(food), class: "btn btn-success"%>
         <% if policy(food).edit? %>
         <%= link_to "Edit it", edit_food_path(food), class: "btn btn-warning"%>
