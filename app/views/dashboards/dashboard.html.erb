@@ -3,60 +3,31 @@
 <h1>Dashboard</h1>
 <br>
 
-<table class=" table table-hover">
-<h2>Your Leftovers!</h2>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Freshness</th>
-      <th>Location</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+  <div class="card-body">
     <% @foods.each do |food| %>
-      <tr>
-        <td><%= food.name %></td>
-        <td><%= food.freshness %></td>
-        <td><%= food.location %></td>
-        <td><%= food.description %></td>
-        <td><%= food.price %></td>
-        <td><%= link_to 'Show', food %></td>
-      </tr>
+      <h5 class="card-title"><%= food.name %></h5>
+      <p class="card-text"><%= food.description %></p>
+      <p class="card-text"><%= food.freshness %></p>
+      <p class="card-text"><%= food.price %></p>
+      <p> <%= link_to 'Show', food %></p>
     <% end %>
-  </tbody>
+  </div>
+</div>
 
-<br>
-
-<table class=" table table-hover">
-<h2>Your Orders!</h2>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Freshness</th>
-      <th>Location</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+  <div class="card-body">
     <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.name %></td>
-        <td><%= order.freshness %></td>
-        <td><%= order.location %></td>
-        <td><%= order.description %></td>
-        <td><%= order.price %></td>
-        <td><%= link_to 'Show', order %></td>
-      </tr>
+      <h5 class="card-title"><%= order.name %></h5>
+      <p class="card-text"><%= order.description %></p>
+      <p class="card-text"><%= order.freshness %></p>
+      <p class="card-text"><%= order.price %></p>
+      <p> <%= link_to 'Show', order %></p>
     <% end %>
-  </tbody>
+  </div>
+</div>
 
-<br>
 
 <%= link_to 'Add your leftovers!', new_food_path %>

@@ -1,19 +1,21 @@
-<body>
-  <div class="show-food card mx-auto" style="max-width: 1000px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="https://images.unsplash.com/photo-1531263539449-56fdf29dfc4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top img-fluid" alt="food image">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h2 class="card-title"><%= @food.name %></h2>
-          <p class="card-text"><strong>Freshness: </strong><%= @food.freshness %></p>
-          <p class="card-text"><strong>Price: </strong><%= @food.price %></p>
-          <p class="card-text"><%= @food.description %></p>
-          <p class="card-text"><small class="text-muted">Updated: <%= @food.updated_at %></small></p>
-          <%= link_to "Bite it!", food_orders_path(@food), method: :post, class: "btn btn-success"%>
+
+<div class="show-card">
+ <img src="https://images.unsplash.com/photo-1531263539449-56fdf29dfc4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="food image">
+   <div class="show-card-content">
+    <div class="show-card-head">
+    <h2><%= @food.name %></h2>
+    <%= link_to edit_food_path, class: "show-icons" do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to food_path(@food), method: :delete, class: "show-icons" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
         </div>
-      </div>
-    </div>
+        <div class="show-card-body">
+  <p><strong>Freshness: </strong><%= @food.freshness %></p>
+  <p><strong>$</strong><%= @food.price %></p>
+  <p><%= @food.description %></p>
   </div>
-</body>
+  <a href="#" class="btn btn-success">Bite it!</a>
+    </div>
+</div>

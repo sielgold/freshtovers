@@ -1,25 +1,24 @@
 <p id="notice"><%= notice %></p>
-
-<div class="container mx-auto">
-
+<div class="container">
   <h1>freshTovers</h1>
   <%= link_to "Add your leftovers!", new_food_path, class: "btn btn-primary"%>
-  <div class="row mx-auto">
+  <div class="row justify-content-md-center">
    <% @foods.each do |food| %>
-    <div class="card m-2" style="width: 18rem;">
-      <img src="https://cdn.pixabay.com/photo/2016/02/29/11/45/muffin-1228445_1280.jpg" class="card-img-top" alt="food image">
-      <div class="card-body p-2">
-        <h5 class="card-title"><%= food.name %></h5>
-        <p class="card-text">Freshness:<%= food.freshness %></p>
-        <p class="card-text">Price:<%= food.price %></p>
-        <p class="card-text"><%= food.description[0..60] %>...</p>
-        <%= link_to "Eat it", food_path(food), class: "btn btn-success"%>
-        <% if policy(food).edit? %>
-        <%= link_to "Edit it", edit_food_path(food), class: "btn btn-warning"%>
-        <%= link_to "delete", food_path(food), method: :delete , class: "btn btn-danger"%>
-        <% end %>
+   <div class="col-md-4 col-sm-12">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
+        <div class="card-body">
+          <h5 class="card-title"><%= food.name %></h5>
+            <p class="card-text">Freshness:<%= food.freshness %></p>
+            <p class="card-text">$:<%= food.price %></p>
+          <%= link_to "Eat it", food_path(food), class: "btn btn-success"%>
+              <% if policy(food).edit? %>
+              <%= link_to "Edit it", edit_food_path(food), class: "btn btn-warning"%>
+              <% end %>
+              <%= link_to "delete", food_path(food), method: :delete , class: "btn btn-danger"%>
+        </div>
       </div>
-    </div>
-    <% end %>
+      </div>
+<% end %>
   </div>
 </div>
