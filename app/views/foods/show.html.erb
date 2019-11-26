@@ -1,6 +1,10 @@
 
 <div class="show-card">
+  <% if @food.photo.url.nil? %>
  <img src="https://images.unsplash.com/photo-1531263539449-56fdf29dfc4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="food image">
+  <% else %>
+  <%= cl_image_tag @food.photo %>
+  <% end %>
    <div class="show-card-content">
     <div class="show-card-head">
     <h2><%= @food.name %></h2>
