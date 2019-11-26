@@ -1,6 +1,5 @@
 <div class="container">
   <h1>freshTovers</h1>
-  <%= link_to "Add your leftovers!", new_food_path, class: "btn btn-primary"%>
   <div class="row justify-content-md-center">
    <% @foods.each do |food| %>
    <% if food.order.empty? %>
