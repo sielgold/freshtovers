@@ -7,6 +7,11 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find(params[:id])
+    @markers = [
+      {
+        lat: @food.latitude,
+        lng: @food.longitude
+      }]
   end
 
   def edit
@@ -51,5 +56,5 @@ class FoodsController < ApplicationController
 
   def food_params
    params.require(:food).permit(:name, :freshness, :location, :description, :price)
-  end
+ end
 end
