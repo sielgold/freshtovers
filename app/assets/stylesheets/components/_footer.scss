@@ -1,3 +1,11 @@
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
 .site-footer
 {
   background-color:black;
@@ -5,12 +13,20 @@
   font-size:15px;
   line-height:24px;
   color:#737373;
-  position: fixed;
   bottom: 0px;
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
+  margin-top: 25px;
+  padding-top: 25px;
 }
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+
 .site-footer hr
 {
   border-top-color:#bbb;
