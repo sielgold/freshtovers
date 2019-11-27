@@ -17,7 +17,7 @@
       <% end %>
       <div class="dashboard-card-content">
       <h5 class="card-title"><%= food.name %></h5>
-      <p class="card-text">Freshness: <%= food.freshness %></p>
+      <p class="card-text"><%= render partial: 'shared/food_emoji', locals: {food: food}%></p>
       <p class="card-text index-card-price"><strong><i class="fas fa-dollar-sign"></i>  </strong><%= food.price %></p>
       <p> <%= link_to 'Show', food %></p>
       </div>
@@ -42,8 +42,10 @@
       <% end %>
   <div class="dashboard-card-content">
       <h5 class="card-title"><%= order.food.name %></h5>
-      <p class="card-text">Freshness: <%= order.food.freshness %></p>
+      <p class="card-text"><%= render partial: 'shared/food_emoji', locals: {food: order.food}%></p>
       <p class="card-text index-card-price"><strong><i class="fas fa-dollar-sign"></i>  </strong><%= order.food.price %></p>
+
+      <%= cl_image_tag order.food.photo, class: "card-text" %>
       <p> <%= link_to 'Show', order %></p>
     </div>
   </div>
