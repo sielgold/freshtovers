@@ -1,35 +1,36 @@
-
 <div class="show-card">
   <% if @food.photo.url.nil? %>
- <img src="https://images.unsplash.com/photo-1531263539449-56fdf29dfc4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="food image">
+  <img src="https://images.unsplash.com/photo-1531263539449-56fdf29dfc4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="food image">
   <% else %>
   <%= cl_image_tag @food.photo %>
   <% end %>
-   <div class="show-card-content">
+  <div class="show-card-content">
     <div class="show-card-head">
-    <h2><%= @food.name %></h2>
-    <%= link_to edit_food_path, class: "show-icons" do %>
+      <h2><%= @food.name %></h2>
+      <% if policy(@food).edit? %>
+        <%= link_to edit_food_path, class: "show-icons" do %>
           <i class="far fa-edit"></i>
         <% end %>
         <%= link_to food_path(@food), method: :delete, class: "show-icons" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        </div>
-        <div class="show-card-body">
-  <p><strong>Freshness: </strong><%= @food.freshness %></p>
-  <p><strong>$</strong><%= @food.price %></p>
-  <p><%= @food.description %></p>
-  </div>
-  <%= link_to "Bite it!", food_orders_path(@food), method: :post, class: "btn btn-success"%>
+      <% end %>
     </div>
+    <div class="show-card-body">
+      <p><strong>Freshness: </strong><%= @food.freshness %></p>
+      <p><strong>$</strong><%= @food.price %></p>
+      <p><%= @food.location %></p>
+    </div>
+    <%= link_to "Bite it!", food_orders_path(@food), method: :post, class: "btn btn-success"%>
+  </div>
 
 </div>
 
 <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+id="map"
+style="width: 100%;
+height: 600px;"
+data-markers="<%= @markers.to_json %>"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
