@@ -1,9 +1,9 @@
-<div class="container">
-  <div class="row justify-content-md-center">
+<div class="container index-container">
+  <div class="row">
     <% @foods.each do |food| %>
       <% if food.order.empty? %>
         <div class="col-md-4 col-sm-12">
-          <div class="card mb-5">
+          <div class="card mb-3 index-card">
             <% if food.photo.url.nil? %>
               <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
             <% else %>
@@ -20,28 +20,14 @@
               <% end %>
               <h5 class="card-title"><%= food.name %></h5>
 <!--               <p class="card-text">Freshness:<%= food.prepared_at %></p>
- -->              <p class="card-text">$:<%= food.price %></p>
-              <%= link_to "Eat it", food_path(food), class: "btn btn-success"%>
+ -->              <p class="card-text index-card-price"><strong><i class="fas fa-dollar-sign"></i>  </strong><%= food.price %></p>
+        <p class="card-text">Freshness:
+          <%= render partial: 'shared/food_emoji', locals: {food: food}%></p>
+                     <%= link_to "Yum!", food_path(food), class: "btn btn-success"%>
             </div>
           </div>
         </div>
       <% end %>
-      <div class="card-body">
-      <% if policy(food).edit? %>
-        <%= link_to edit_food_path(food), class: "show-icons" do %>
-          <i class="far fa-edit"></i>
-        <% end %>
-        <%= link_to food_path(food), method: :delete, class: "show-icons" do %>
-          <i class="fas fa-trash-alt"></i>
-        <% end %>
-      <% end %>
-        <h5 class="card-title"><%= food.name %></h5>
-        <p class="card-text">Freshness:
-          <%= render partial: 'shared/food_emoji', locals: {food: food}%></p>
-        <p class="card-text">$:<%= food.price %></p>
-        <%= link_to "Eat it", food_path(food), class: "btn btn-success"%>
-      </div>
-    </div>
     <% end %>
   </div>
 </div>
