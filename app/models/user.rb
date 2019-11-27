@@ -8,6 +8,6 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def avg_rating
-    reviews.pluck(:rating).sum / reviews.length
+    # reviews.pluck(:rating).sum / reviews.length
   end
 end
