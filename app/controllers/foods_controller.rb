@@ -2,14 +2,16 @@ class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   def index
+
     @foods = policy_scope(Food).order(created_at: :asc)
+
     if params[:food].present?
-      @foods = Food.search(params["food"]["name"])
+      @name_foods = Food.search(params["food"]["name"])
 
       # @name_foods = Food.search(params["food"]["name"])
       # @fresh_foods = Food.search(params["food"]["freshness"])
-      # @locat_foods = Food.search(params["food"]["location"])
-      # @foods = @name_foods & @fresh_foods & @locat_foods
+      @locat_foods = Food.search(params["food"]["location"])
+      @foods = @name_foods & @locat_foods
     end
   end
  # if params[:query].present?
@@ -69,6 +71,6 @@ class FoodsController < ApplicationController
   end
 
   def food_params
-   params.require(:food).permit(:name, :freshness, :location, :description, :price, :photo)
- end
+   params.require(:food).permit(:name, :prepared_at, :location, :description, :price, :photo)
+  end
 end

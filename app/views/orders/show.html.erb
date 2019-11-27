@@ -9,8 +9,9 @@
     <div class="col-md-8">
       <div class="card-body">
         <h2 class="card-title"><%= @food.name %></h2>
-        <p class="card-text"><strong>Freshness: </strong><%= @food.freshness %></p>
-        <p class="card-text"><strong>Price: </strong><%= @food.price %></p>
+        <p class="card-text">Freshness:
+          <%= render partial: 'shared/food_emoji', locals: {food: food}%></p>
+          <p class="card-text index-card-price"><strong><i class="fas fa-dollar-sign"></i>  </strong><%= food.price %></p>
         <p class="card-text"><%= @food.location %></p>
         <p class="card-text"><small class="text-muted"><%= @food.updated_at %></small></p>
       </div>

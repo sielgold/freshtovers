@@ -15,9 +15,10 @@
     <div class="card-trip-infos">
       <div>
         <h2><%= food.name  %></h2>
-        <p><%= food.description %></p>
+        <p class="card-text">Freshness:
+        <%= render partial: 'shared/food_emoji', locals: {food: food}%></p>
+        <p class="card-text index-card-price"><strong><i class="fas fa-dollar-sign"></i>  </strong><%= food.price %></p>
       </div>
-      <h2 class="card-trip-pricing"><%= food.price %></h2>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
   </div>

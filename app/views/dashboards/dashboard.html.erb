@@ -1,7 +1,8 @@
 <div class="dashboard-head row justify-content-between m-5" >
-<h1>Dashboard</h1>
-<%= link_to "Couldn't finish something?", new_food_path %>
+  <h1>Dashboard</h1>
+  <%= link_to "Couldn't finish something?", new_food_path %>
 </div>
+
 
 <h1>My Average Seller Rating: <%= current_user.avg_rating %></h1>
 
@@ -19,34 +20,58 @@
       <p class="card-text"><%= food.freshness %></p>
       <p class="card-text"><%= food.price %></p>
       <p> <%= link_to 'Show', food %></p>
+<div class="tabset">
+  <input type="radio" name="tabset" id="tab1" aria-controls="What you've shared" checked>
+  <label for="tab1">What you've shared</label>
+  <input type="radio" name="tabset" id="tab2" aria-controls="What you've ordered">
+  <label for="tab2">What you've ordered</label>
+  <div class="tab-panels">
+    <div class="container index-container">
+      <div class="row">
+        <% @foods.each do |food| %>
+        <div class="col-md-4 col-sm-12">
+          <div class="dashboard-card">
+            <div class="card">
+              <% if food.photo.url.nil? %>
+              <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
+              <% else %>
+              <%= cl_image_tag food.photo %>
+              <% end %>
+              <div class="dashboard-card-content">
+                <h5 class="card-title"><%= food.name %></h5>
+                <p class="card-text"><%= render partial: 'shared/food_emoji', locals: {food: food}%></p>
+                <p class="card-text index-card-price"><strong><i class="fas fa-dollar-sign"></i>  </strong><%= food.price %></p>
+                <p> <%= link_to 'Show', food %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
-  </div>
-  </div>
-</div>
-    <% end %>
-</div>
-
-<h2>What you've warmed up</h2>
-<div class="row justify-content-md-center">
-    <% @orders.each do |order| %>
-    <div class="col-md-4 col-sm-12">
-    <div class="dashboard-card">
-  <div class="card">
-  <img class="card-img-top card-img" src="https://source.unsplash.com/random" alt="food-image">
-  <div class="dashboard-card-content">
-      <h5 class="card-title"><%= order.food.name %></h5>
-      <p class="card-text"><%= order.food.description %></p>
-      <p class="card-text"><%= order.food.freshness %></p>
-      <p class="card-text"><%= order.food.price %></p>
-
-      <%= cl_image_tag order.food.photo, class: "card-text" %>
-
-      <p> <%= link_to 'Show', order %></p>
+    </div>
+    <div class="container index-container">
+      <div class="row">
+        <% @orders.each do |order| %>
+        <div class="col-md-4 col-sm-12">
+          <div class="dashboard-card">
+            <div class="card">
+              <% if order.food.photo.url.nil? %>
+              <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
+              <% else %>
+              <%= cl_image_tag food.photo %>
+              <% end %>
+              <div class="dashboard-card-content">
+                <h5 class="card-title"><%= order.food.name %></h5>
+                <p class="card-text"><%= render partial: 'shared/food_emoji', locals: {food: order.food}%></p>
+                <p class="card-text index-card-price"><strong><i class="fas fa-dollar-sign"></i>  </strong><%= order.food.price %></p>
+                <%= cl_image_tag order.food.photo, class: "card-text" %>
+                <p> <%= link_to 'Show', order %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-</div>
-    <% end %>
-</div>
-
-
