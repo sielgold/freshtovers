@@ -19,7 +19,6 @@
         <% end %>
       <% end %>
         <h5 class="card-title"><%= food.name %></h5>
-        <p class="card-text"><strong>Freshness: </strong><%= food.freshness %></p>
         <p class="card-text index-card-price"><strong><i class="fas fa-dollar-sign"></i>  </strong><%= food.price %></p>
         <%= link_to "Yum!", food_path(food), class: "btn btn-success"%>
       </div>
