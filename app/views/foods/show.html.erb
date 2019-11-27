@@ -17,7 +17,7 @@
       <% end %>
     </div>
     <div class="show-card-body">
-      <p><strong>Freshness: </strong><%= render partial: 'shared/food_emoji', locals: {food: order.food}%></p>
+      <p><strong>Freshness: </strong><%= render partial: 'shared/food_emoji', locals: {food: food}%></p>
       <p><strong>$</strong><%= @food.price %></p>
       <p><%= @food.location %></p>
     </div>
