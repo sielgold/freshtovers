@@ -14,6 +14,7 @@
   <input type="radio" name="tabset" id="tab2" aria-controls="What you've ordered">
   <label for="tab2">What you've ordered</label>
   <div class="tab-panels">
+    <section id="What you've shared" class="tab-panel">
     <div class="container index-container">
       <div class="row">
         <% @foods.each do |food| %>
@@ -37,6 +38,8 @@
         <% end %>
       </div>
     </div>
+    </section>
+    <section id="What you've ordered" class="tab-panel">
     <div class="container index-container">
       <div class="row">
         <% @orders.each do |order| %>
@@ -61,6 +64,7 @@
         <% end %>
       </div>
     </div>
+  </section>
   </div>
 </div>
 </div>
