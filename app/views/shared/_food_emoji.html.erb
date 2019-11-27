@@ -1,0 +1,9 @@
+<% if food.hours_passed == 0 %>
+    <i class="em em-zipper_mouth_face" aria-role="presentation" aria-label="ZIPPER-MOUTH FACE"></i>
+<% elsif food.hours_passed <= 48 %>
+    <i class="em em-drooling_face" aria-role="presentation" aria-label="DROOLING FACE"></i>
+<% elsif food.hours_passed <= 96 %>
+    <i class="em em-expressionless" aria-role="presentation" aria-label="EXPRESSIONLESS FACE"></i>
+<% else %>
+    <i class="em em-cold_sweat" aria-role="presentation" aria-label="FACE WITH OPEN MOUTH AND COLD SWEAT"></i>
+<% end  %>

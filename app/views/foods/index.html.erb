@@ -19,13 +19,29 @@
                 <% end %>
               <% end %>
               <h5 class="card-title"><%= food.name %></h5>
-              <p class="card-text">Freshness:<%= food.freshness %></p>
-              <p class="card-text">$:<%= food.price %></p>
+<!--               <p class="card-text">Freshness:<%= food.prepared_at %></p>
+ -->              <p class="card-text">$:<%= food.price %></p>
               <%= link_to "Eat it", food_path(food), class: "btn btn-success"%>
             </div>
           </div>
         </div>
       <% end %>
+      <div class="card-body">
+      <% if policy(food).edit? %>
+        <%= link_to edit_food_path(food), class: "show-icons" do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to food_path(food), method: :delete, class: "show-icons" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      <% end %>
+        <h5 class="card-title"><%= food.name %></h5>
+        <p class="card-text">Freshness:
+          <%= render partial: 'shared/food_emoji', locals: {food: food}%></p>
+        <p class="card-text">$:<%= food.price %></p>
+        <%= link_to "Eat it", food_path(food), class: "btn btn-success"%>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

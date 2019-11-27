@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2019_11_27_105521) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.integer "freshness"
     t.string "location"
     t.text "description"
     t.integer "price"
@@ -27,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_105521) do
     t.float "latitude"
     t.float "longitude"
     t.string "photo"
+    t.datetime "prepared_at"
     t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
