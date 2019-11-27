@@ -1,6 +1,7 @@
 class Food < ApplicationRecord
   belongs_to :user
   has_many :order
+  has_many :review, through: :order
   validates :name, presence: true
   validates :prepared_at, presence: true
   validates :location, presence: true

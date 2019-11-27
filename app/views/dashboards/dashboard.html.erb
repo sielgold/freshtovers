@@ -2,6 +2,24 @@
   <h1>Dashboard</h1>
   <%= link_to "Couldn't finish something?", new_food_path %>
 </div>
+
+
+<h1>My Average Seller Rating: <%= current_user.avg_rating %></h1>
+
+<div class="container">
+<h2>What you've shared</h2>
+<div class="row justify-content-md-center mb-5">
+    <% @foods.each do |food| %>
+    <div class="col-md-4 col-sm-12">
+        <div class="dashboard-card">
+      <div class="card">
+          <img class="card-img-top card-img" src="https://source.unsplash.com/random" alt="food-image">
+          <div class="dashboard-card-content">
+      <h5 class="card-title"><%= food.name %></h5>
+      <p class="card-text"><%= food.description %></p>
+      <p class="card-text"><%= food.freshness %></p>
+      <p class="card-text"><%= food.price %></p>
+      <p> <%= link_to 'Show', food %></p>
 <div class="tabset">
   <input type="radio" name="tabset" id="tab1" aria-controls="What you've shared" checked>
   <label for="tab1">What you've shared</label>
