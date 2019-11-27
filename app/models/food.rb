@@ -7,6 +7,11 @@ class Food < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
 
+  include AlgoliaSearch
+
+  algoliasearch do
+    attributes :name, :location, :freshness, :price
+  end
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
