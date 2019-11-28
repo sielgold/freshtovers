@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_134214) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rating"
     t.index ["food_id"], name: "index_orders_on_food_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
