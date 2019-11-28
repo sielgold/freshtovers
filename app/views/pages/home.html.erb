@@ -10,6 +10,7 @@
   <% @foods.each do |food| %>
   <% if food.order.empty? %>
   <div class="col-md-4 col-sm-12">
+  <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
   <div class="card mb-3 home-card">
     <% if food.photo.url.nil? %>
     <img src="https://source.unsplash.com/1600x900/?<%= food.name %>" class='card-img-top' alt="food-image">
@@ -26,6 +27,7 @@
     </div>
   </div>
   </div>
+</div>
   <% end %>
   <% end %>
 </div>
