@@ -46,7 +46,7 @@
           <div class="dashboard-card">
             <div class="card">
               <% if order.food.photo.url.nil? %>
-              <img src="https://source.unsplash.com/1600x900/?<%= food.name %>" class="card-img-top" alt="food-image">
+              <img src="https://source.unsplash.com/1600x900/?<%= order.food.name %>" class="card-img-top" alt="food-image">
               <% else %>
               <%= cl_image_tag food.photo %>
               <% end %>
