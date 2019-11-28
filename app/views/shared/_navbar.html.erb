@@ -31,7 +31,7 @@
         </li>
         <li class="nav-item dropdown btn btn-light">
           <% if current_user.photo.file.nil? %>
-            <%= cl_image_tag "05155580-9227-4627-92da-9a818714e1a5_200x200_ekcbxq", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag "blank-avatar_rupjxt", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
