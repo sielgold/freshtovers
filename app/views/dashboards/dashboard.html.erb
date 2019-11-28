@@ -3,11 +3,9 @@
   <%= link_to "Couldn't finish something?", new_food_path %>
 </div>
 
-
-<!-- <h1>My Average Seller Rating: <%= current_user.avg_rating %></h1> -->
-
 <div class="container">
 <h2>What you've shared</h2>
+  <h3>My sharing rating: <%= current_user.avg_rating %></h3>
 <div class="tabset">
   <input type="radio" name="tabset" id="tab1" aria-controls="What you've shared" checked>
   <label for="tab1">What you've shared</label>
