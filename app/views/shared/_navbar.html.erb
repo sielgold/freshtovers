@@ -2,7 +2,9 @@
   <%= link_to root_path, class: "navbar-brand" do %>
   <%= cl_image_tag "05155580-9227-4627-92da-9a818714e1a5_200x200_ekcbxq", crop: :fill %>
   <% end %>
-  <h3>Freshtovers</h3>
+  <div class="topnav-centered">
+    <a href="#home" class="active"><h3>Freshtovers</h3></a>
+  </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,18 +15,23 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
+          <button class="btn btn-light">
           <%= link_to "Home", root_path, class: "nav-link" %>
+          </button>
         </li>
         <li>
-          <%= link_to "Eat!", foods_path, class: "nav-link" %>
+          <button class="btn btn-light">
+          <%= link_to "Available Food", foods_path, class: "nav-link" %>
+          </button>
         </li>
         <li>
+          <button class="btn btn-light">
           <%= link_to "Post", new_food_path, class: "nav-link" %>
+          </button>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown btn btn-light">
           <% if current_user.photo.file.nil? %>
             <%= cl_image_tag "05155580-9227-4627-92da-9a818714e1a5_200x200_ekcbxq", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <!-- DISPLAY STOCK ICON INSTEAD OF EMAIL-->
           <% else %>
             <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
@@ -35,11 +42,14 @@
           </div>
         </li>
         <% else %>
-        <li class="nav-item">
+        <li class="nav-item btn btn-light">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
-
+        <li class="nav-item btn btn-light">
+          <%= link_to "Sign-up", new_user_session_path, class: "nav-link" %>
+        </li>
       <% end %>
     </ul>
   </div>
 </div>
+
