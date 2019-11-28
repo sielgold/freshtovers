@@ -14,7 +14,8 @@ test2 = User.create!(email:"josh@bros.com", full_name:"josh bjordimeer", address
 test3 = User.create!(email:"arnie@gmail.com", full_name:"Aaron Wolf", address: "Golan Heights", password: "123456")
 test4 = User.create!(email:"ron@Artenstein.com", full_name:"Ron Gold", address: "Eilat", password: "123456")
 
-testers = [test, test1, test2, test3, test4]
+# testers = [test, test1, test2, test3, test4]
+
 # puts "creating foods"
 # Food.create!(name: "Day old Sushi", prepared_at: DateTime.new, location: "Tel Aviv, Israel", price: 2, user: test2)
 # Food.create!(name: "Glass Shards!", prepared_at: DateTime.now - 22.hours, location: "Hertzl Street, Netanya, Israel", price: 15, user: test1)
@@ -26,10 +27,10 @@ testers = [test, test1, test2, test3, test4]
 # freshness = Faker::Date.backward(days: 14) - rand(0..120).hours
 # location = Faker::Address.full_address
 # price = rand(1...50)
-
+dates = [DateTime.now - 4.days, DateTime.now - 3.hours, DateTime.now - 1.day]
 puts "creating 50 fake dishes"
 50.times do
-food = Food.create!(name: Faker::Food.dish, prepared_at: Faker::Date.backward(days: 14) - rand(0..50).hours, location: Faker::Address.full_address, price: rand(1...50), user: testers.sample)
+food = Food.create!(name: Faker::Food.dish, prepared_at: dates.sample, location: Faker::Address.full_address, price: rand(1...50), user: User.all.sample)
 end
 puts 'Finished!'
 
@@ -48,10 +49,10 @@ puts 'Finished!'
 # borekas = Food.create!(name: "borekas", prepared_at: DateTime.now - 2.hours, location: "Eilat", description: "come and get it", price: 10, user: test4)
 # b
 
-# puts "creating Orders..."
+puts "creating Orders..."
 
-# 30.times do
-# orders = Order.create!(food: food.sample, user: testers.sample)
-# end
-# puts "Done!"
+30.times do
+orders = Order.create!(food: Food.all.sample, user: User.all.sample)
+end
+puts "Done!"
 

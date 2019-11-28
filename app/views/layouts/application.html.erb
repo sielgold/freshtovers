@@ -9,17 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-  </head>
-  <body>
-    <%= render 'shared/navbar'  %>
-    <%= render 'shared/flashes'  %>
-    <div class="content">
-    <%= yield %>
-    </div>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-  </body>
-  <footer>
-  <%= render 'shared/footer'  %>
-  </footer>
-</html>
+    </head>
+    <body>
+      <%= render 'shared/navbar'  %>
+      <%= render 'shared/flashes'  %>
+      <div class="content">
+        <%= yield %>
+      </div>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+    </body>
+    <footer>
+      <%= render 'shared/footer'  %>
+    </footer>
+  </html>

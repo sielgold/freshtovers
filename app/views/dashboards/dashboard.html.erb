@@ -4,13 +4,12 @@
 </div>
 
 <div class="container">
-<h2>What you've shared</h2>
   <h3>My sharing rating: <%= current_user.avg_rating %></h3>
 <div class="tabset">
   <input type="radio" name="tabset" id="tab1" aria-controls="What you've shared" checked>
-  <label for="tab1">What you've shared</label>
+  <label for="tab1"><h2>What you've shared</h2></label>
   <input type="radio" name="tabset" id="tab2" aria-controls="What you've ordered">
-  <label for="tab2">What you've ordered</label>
+  <label for="tab2"><h2>What you've ordered</h2></label>
   <div class="tab-panels">
     <section id="What you've shared" class="tab-panel">
     <div class="container index-container">
@@ -20,7 +19,7 @@
           <div class="dashboard-card">
             <div class="card">
               <% if food.photo.url.nil? %>
-              <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
+              <img src="https://source.unsplash.com/1600x900/?<%= food.name %>" class="card-img-top" alt="food-image">
               <% else %>
               <%= cl_image_tag food.photo %>
               <% end %>
@@ -45,7 +44,7 @@
           <div class="dashboard-card">
             <div class="card">
               <% if order.food.photo.url.nil? %>
-              <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
+              <img src="https://source.unsplash.com/1600x900/?<%= order.food.name %>" class="card-img-top" alt="food-image">
               <% else %>
               <%= cl_image_tag order.food.photo %>
               <% end %>
