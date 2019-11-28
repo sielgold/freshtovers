@@ -40,6 +40,9 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
+    date = params[:food][:prepared_at].split[0].split("-").map{|e| e.to_i}
+    time = params[:food][:prepared_at].split[1].split(":").map{|e| e.to_i}
+    @food.prepared_at = DateTime.new(date[0], date[1], date[2], time[0], time[1], 0)
     @food.user = current_user
     authorize @food
 
