@@ -21,7 +21,8 @@
       <p><strong>$</strong><%= @food.price %></p>
       <p><%= @food.location %></p>
     </div>
-    <%= link_to "Bite it!", food_orders_path(@food), method: :post, class: "btn btn-success"%>
+
+    <%= link_to "Bite it!", food_orders_path(@food), method: 'post', class: "btn btn-success"%>
   </div>
 
 </div>

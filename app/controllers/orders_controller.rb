@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @food = Food.find(params[:food_id])
-    @review = Review.new
+    @review = Review.new(order_id: @order.id)
     authorize @food
     authorize @order
   end

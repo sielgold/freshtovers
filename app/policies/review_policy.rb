@@ -10,5 +10,9 @@ class ReviewPolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    true # add conditional
+  end
+
 
 end

@@ -6,3 +6,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 // require 'algolia/v3/algoliasearch.min'
 
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
+

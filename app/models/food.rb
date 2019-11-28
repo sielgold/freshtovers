@@ -24,5 +24,4 @@ class Food < ApplicationRecord
       ((Time.now - self.prepared_at) / 3600)
     end
   end
-
 end
