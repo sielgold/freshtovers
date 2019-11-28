@@ -27,10 +27,10 @@ test4 = User.create!(email:"ron@Artenstein.com", full_name:"Ron Gold", address: 
 # freshness = Faker::Date.backward(days: 14) - rand(0..120).hours
 # location = Faker::Address.full_address
 # price = rand(1...50)
-
+dates = [DateTime.now - 4.days, DateTime.now - 3.hours, DateTime.now - 1.day]
 puts "creating 50 fake dishes"
 50.times do
-food = Food.create!(name: Faker::Food.dish, prepared_at: Faker::Date.backward(days: 14) - rand(0..50).hours, location: Faker::Address.full_address, price: rand(1...50), user: User.all.sample)
+food = Food.create!(name: Faker::Food.dish, prepared_at: dates.sample, location: Faker::Address.full_address, price: rand(1...50), user: User.all.sample)
 end
 puts 'Finished!'
 

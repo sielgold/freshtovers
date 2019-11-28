@@ -21,7 +21,7 @@
           <div class="dashboard-card">
             <div class="card">
               <% if food.photo.url.nil? %>
-              <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
+              <img src="https://source.unsplash.com/1600x900/?<%= food.name %>" class="card-img-top" alt="food-image">
               <% else %>
               <%= cl_image_tag food.photo %>
               <% end %>
@@ -46,7 +46,7 @@
           <div class="dashboard-card">
             <div class="card">
               <% if order.food.photo.url.nil? %>
-              <img src="https://images.unsplash.com/photo-1454255779048-55ecd78837d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="food-image">
+              <img src="https://source.unsplash.com/1600x900/?<%= order.food.name %>" class="card-img-top" alt="food-image">
               <% else %>
               <%= cl_image_tag food.photo %>
               <% end %>

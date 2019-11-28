@@ -1,11 +1,17 @@
 
 .card img {
   object-fit: cover;
+  max-height: 163px;
 }
 .card {
   position: relative;
   border: none;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+.card .card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .card .fa-edit {
   position: absolute;
@@ -18,8 +24,9 @@
 .index-container {
   padding-top: 30px;
 }
-.index-card {
+.index-card .home-card .dashboard-card{
   height: 380px;
+  border-radius: 10px;
 }
 .index-card-price {
   position: absolute;
