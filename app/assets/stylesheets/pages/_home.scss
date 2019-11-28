@@ -1,13 +1,11 @@
 // Specific CSS for your home-page
 .search-form-wrapper {
-  padding: 24px;
+  padding: 56px;
   background-color: white;
   font-size:0.6rem;
   border-radius: 16px;
   input {
-    font-size:0.6rem;
-
-
+    font-size: 1.5rem;
   }
 
 
@@ -17,4 +15,8 @@
     justify-content: space-evenly;
     width: 100%;
   }
+}
+
+.banner-home {
+  padding: 90px;
 }

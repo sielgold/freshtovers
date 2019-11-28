@@ -2,8 +2,9 @@
 <%= simple_form_for(Food.new, method: 'get') do |f| %>
 <%= f.input :name, input_html: {id:"typed"},  label: false  %>
 
-  <%= f.submit :SEARCH, class: 'btn btn-primary' %>
-
+  <div class="text-center">
+    <%= f.submit :SEARCH, class: 'btn btn-primary btn-block' %>
+  </div>
 <% end %>
 
   <!-- MAKE A SLIDER FOR FRESHNESS -->
