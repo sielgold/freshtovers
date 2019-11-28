@@ -2,16 +2,39 @@ class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   def index
+    #1serach and found
+    #2search and not found
+    #3no search
+    #look for items then if found present
+
+
+    # foods = all foods
+    # if searching
+    #   results = search
+    #   if results are not empty
+    #     foods = results
+    #   else
+    #     message = 'error message'
+    #   end
+    # end
+
+
+
+
 
     @foods = policy_scope(Food).order(created_at: :asc)
 
     if params[:food].present?
-      @name_foods = Food.search(params["food"]["name"])
-
+      puts params
+      puts "Searching for #{params[:food][:name]}"
+      @foods = Food.search(params[:food][:name])
       # @name_foods = Food.search(params["food"]["name"])
       # @fresh_foods = Food.search(params["food"]["freshness"])
-      @locat_foods = Food.search(params["food"]["location"])
-      @foods = @name_foods & @locat_foods
+      # @locat_foods = Food.search(params["food"]["location"])
+      # @foods = @name_foods & @locat_foods
+    else
+      @message = "Sorry we couldn't find what youre searching, here are some suggestions:"
+      @foods = policy_scope(Food).order(created_at: :asc)
     end
   end
  # if params[:query].present?
@@ -72,5 +95,5 @@ class FoodsController < ApplicationController
 
   def food_params
    params.require(:food).permit(:name, :prepared_at, :location, :description, :price, :photo)
-  end
+ end
 end

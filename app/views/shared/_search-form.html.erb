@@ -1,6 +1,6 @@
 
 <%= simple_form_for(Food.new, method: 'get') do |f| %>
-  <%= f.input :name  %>
+<%= f.input :name, input_html: {id:"typed"},  label: false  %>
 
   <%= f.submit :SEARCH, class: 'btn btn-primary' %>
 
